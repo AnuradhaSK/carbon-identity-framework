@@ -268,4 +268,29 @@ public interface RoleDAO {
      * @throws IdentityRoleManagementException IdentityRoleManagementException.
      */
     Role getRoleWithoutUsers(String roleID, String tenantDomain) throws IdentityRoleManagementException;
+
+    /**
+     * Share roles of an application.
+     *
+     * @param mainApplicationID             Main application ID.
+     * @param mainApplicationTenantDomain   Main application tenant domain.
+     * @param sharedApplicationID           Shared application ID.
+     * @param sharedApplicationTenantDomain Shared application tenant domain.
+     * @throws IdentityRoleManagementException Error occurred while sharing roles.
+     */
+    void shareRoles(String mainApplicationID, String mainApplicationTenantDomain, String sharedApplicationID,
+                    String sharedApplicationTenantDomain) throws IdentityRoleManagementException;
+
+    /**
+     * Add shared role to main role relationship.
+     *
+     * @param mainRoleUUID           Main role UUID.
+     * @param sharedRoleUUID         Shared role UUID.
+     * @param mainRoleTenantDomain   Main role tenant domain.
+     * @param sharedRoleTenantDomain Shared role tenant domain.
+     * @throws IdentityRoleManagementException Error occurred while adding shared role to main role relationship.
+     */
+    void addMainRoleToSharedRoleRelationship(String mainRoleUUID, String sharedRoleUUID, String mainRoleTenantDomain,
+                                             String sharedRoleTenantDomain)
+            throws IdentityRoleManagementException;
 }

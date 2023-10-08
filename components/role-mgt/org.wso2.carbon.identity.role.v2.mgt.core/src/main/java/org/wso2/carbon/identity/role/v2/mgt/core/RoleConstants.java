@@ -98,6 +98,10 @@ public class RoleConstants {
         public static final String UM_GROUP_ID = "UM_GROUP_ID";
         public static final String GROUP_NAME = "GROUP_NAME";
 
+        // Not a table column. Used for insert query.
+        public static final String UM_SHARED_TENANT_ID = "UM_SHARED_TENANT_ID;";
+        public static final String UM_SHARED_REF_ID = "UM_SHARED_REF_ID";
+
         public static final String NEW_ROLE_NAME = "NEW_ROLE_NAME";
         public static final String USER_NOT_FOUND_ERROR_MESSAGE = "A user doesn't exist with name: %s " +
                 "in the tenantDomain: %s";

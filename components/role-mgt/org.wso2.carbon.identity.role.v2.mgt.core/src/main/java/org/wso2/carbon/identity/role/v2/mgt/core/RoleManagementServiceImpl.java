@@ -387,6 +387,23 @@ public class RoleManagementServiceImpl implements RoleManagementService {
         return roleDAO.getRoleNameByID(roleID, tenantDomain);
     }
 
+    @Override
+    public void shareRoles(String mainApplicationID, String mainApplicationTenantDomain, String sharedApplicationID,
+                           String sharedApplicationTenantDomain) throws IdentityRoleManagementException {
+
+        roleDAO.shareRoles(mainApplicationID, mainApplicationTenantDomain, sharedApplicationID,
+                sharedApplicationTenantDomain);
+    }
+
+    @Override
+    public void addMainRoleToSharedRoleRelationship(String mainRoleUUID, String sharedRoleUUID,
+                                                    String mainRoleTenantDomain, String sharedRoleTenantDomain)
+            throws IdentityRoleManagementException {
+
+        roleDAO.addMainRoleToSharedRoleRelationship(mainRoleUUID, sharedRoleUUID, mainRoleTenantDomain,
+                sharedRoleTenantDomain);
+    }
+
     private String getUser(String tenantDomain) {
 
         String user = CarbonContext.getThreadLocalCarbonContext().getUsername();

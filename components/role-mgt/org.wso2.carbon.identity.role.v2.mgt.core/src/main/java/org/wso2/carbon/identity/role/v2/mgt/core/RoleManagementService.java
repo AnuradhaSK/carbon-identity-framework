@@ -260,4 +260,28 @@ public interface RoleManagementService {
      * @throws IdentityRoleManagementException IdentityRoleManagementException.
      */
     String getRoleNameByRoleId(String roleID, String tenantDomain) throws IdentityRoleManagementException;
+
+    /**
+     * Share roles.
+     *
+     * @param mainApplicationID             Main application ID.
+     * @param mainApplicationTenantDomain   Main application tenant domain.
+     * @param sharedApplicationID           Shared application ID.
+     * @param sharedApplicationTenantDomain Shared application tenant domain.
+     * @throws IdentityRoleManagementException Error occurred while sharing roles.
+     */
+    void shareRoles(String mainApplicationID, String mainApplicationTenantDomain, String sharedApplicationID,
+                    String sharedApplicationTenantDomain) throws IdentityRoleManagementException;
+
+    /**
+     * Add the relationship between main role and the shared role.
+     *
+     * @param mainRoleUUID           Main role UUID.
+     * @param sharedRoleUUID         Shared role UUID.
+     * @param mainRoleTenantDomain   Main role tenant domain.
+     * @param sharedRoleTenantDomain Shared role tenant domain.
+     * @throws IdentityRoleManagementException Error occurred while adding the relationship.
+     */
+    void addMainRoleToSharedRoleRelationship(String mainRoleUUID, String sharedRoleUUID, String mainRoleTenantDomain,
+                                             String sharedRoleTenantDomain) throws IdentityRoleManagementException;
 }
