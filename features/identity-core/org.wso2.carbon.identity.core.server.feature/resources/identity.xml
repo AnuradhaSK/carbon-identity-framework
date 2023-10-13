@@ -2290,6 +2290,7 @@
                 <SubPaths>
                     <Path>/scim2/Groups</Path>
                     <Path>/scim2/Users</Path>
+                    <Path>/scim2/v2/Roles</Path>
                     <Path>/scim2/Schemas</Path>
                 </SubPaths>
             </Context>
